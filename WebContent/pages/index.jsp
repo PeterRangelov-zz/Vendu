@@ -5,7 +5,7 @@
     <title>Vendu</title>
   </head>
   <body>
-    <h1>Vendu home</h1>
+    <h1>Vendu application backend</h1>
 
   </body>
 </html>
