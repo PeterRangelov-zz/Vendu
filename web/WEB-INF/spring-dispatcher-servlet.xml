@@ -9,10 +9,10 @@ http://www.springframework.org/schema/mvc
 http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
 
-       <context:component-scan base-package="controllers" />
+       <context:component-scan base-package="main.java.controllers" />
        <mvc:annotation-driven />
 
-       <mvc:resources location="/resources/**" mapping="/resources/**"></mvc:resources>
+       <!--<mvc:resources location="/resources/**" mapping="/resources/**"></mvc:resources>-->
 
        <bean id="viewResolver"
              class="org.springframework.web.servlet.view.InternalResourceViewResolver">
