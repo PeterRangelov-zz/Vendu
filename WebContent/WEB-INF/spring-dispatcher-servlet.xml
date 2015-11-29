@@ -9,7 +9,7 @@ http://www.springframework.org/schema/mvc
 http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
 
-       <context:component-scan base-package="main.java.controllers" />
+       <context:component-scan base-package="controllers" />
        <mvc:annotation-driven />
 
        <!--<mvc:resources location="/resources/**" mapping="/resources/**"></mvc:resources>-->
