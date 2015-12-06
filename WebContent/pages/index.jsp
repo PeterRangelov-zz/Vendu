@@ -13,7 +13,7 @@
           <tr>
             <td>Endpoint</td>
             <td>Operation</td>
-            <td>Purpose</td>
+            <td>Action</td>
           </tr>
         </thead>
         <tr>
@@ -30,7 +30,7 @@
 
         <tr>
           <td><a href = "/ebay">/ebay</a></td>
-          <td>PUT</td>
+          <td>POST</td>
           <td>Pass an item object and upload to Ebay account. Receive an item ID.</td>
         </tr>
 
