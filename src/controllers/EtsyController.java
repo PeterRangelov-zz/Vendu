@@ -5,6 +5,7 @@ import com.mashape.unirest.http.JsonNode;
 import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
 import dto.Item;
+import org.json.JSONArray;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,18 +13,19 @@ import org.springframework.web.bind.annotation.*;
 public class EtsyController {
 
     @RequestMapping(value = "/etsy/test", method = RequestMethod.GET, produces= MediaType.APPLICATION_JSON_VALUE)
-    public Item testEtsy () throws UnirestException {
+    public @ResponseBody String testEtsy () throws UnirestException {
         Item i = new Item("Bike", 10);
         System.out.println(i) ;
 
+        String key = System.getProperty("ETSY_KEYSTRING");
+        String key2 = System.getenv("ETSY_KEYSTRING");
         // Invoke unirest
-        HttpResponse<JsonNode> response = Unirest.post("http://httpbin.org/post")
-                .queryString("name", "Mark")
-                .field("last", "Polo")
-                .asJson();
+        HttpResponse<String> response = Unirest.get("https://openapi.etsy.com/v2/listings/active")
+                .queryString("api_key", System.getProperty("ETSY_KEYSTRING"))
+                .asString();
 
-
-        return i;
+//        JSONArray array = new JSONArray(response.getBody());
+        return response.getBody();
     }
 
     @RequestMapping(value = "/etsy", method = RequestMethod.POST, produces= MediaType.APPLICATION_JSON_VALUE)
