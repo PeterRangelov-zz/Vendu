@@ -18,7 +18,11 @@ public class EtsyController {
         System.out.println(i) ;
 
         String key = System.getProperty("ETSY_KEYSTRING");
-        String key2 = System.getenv("ETSY_KEYSTRING");
+
+        if (key.isEmpty()) {
+            key = System.getenv("ETSY_KEYSTRING");
+        }
+
         // Invoke unirest
         HttpResponse<String> response = Unirest.get("https://openapi.etsy.com/v2/listings/active")
                 .queryString("api_key", System.getProperty("ETSY_KEYSTRING"))
