@@ -17,11 +17,7 @@ public class EtsyController {
         Item i = new Item("Bike", 10);
         System.out.println(i) ;
 
-        String key = System.getProperty("ETSY_KEYSTRING");
-
-        if (key==null) {
-            key = System.getenv("ETSY_KEYSTRING");
-        }
+        String key = System.getenv("ETSY_KEYSTRING");
 
         // Invoke unirest
         HttpResponse<String> response = Unirest.get("https://openapi.etsy.com/v2/listings/active")
