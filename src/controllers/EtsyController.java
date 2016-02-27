@@ -19,7 +19,7 @@ public class EtsyController {
 
         String key = System.getProperty("ETSY_KEYSTRING");
 
-        if (key.isEmpty()) {
+        if (key==null) {
             key = System.getenv("ETSY_KEYSTRING");
         }
 
