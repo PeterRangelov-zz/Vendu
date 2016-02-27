@@ -25,7 +25,7 @@ public class EtsyController {
 
         // Invoke unirest
         HttpResponse<String> response = Unirest.get("https://openapi.etsy.com/v2/listings/active")
-                .queryString("api_key", System.getProperty("ETSY_KEYSTRING"))
+                .queryString("api_key", key)
                 .asString();
 
 //        JSONArray array = new JSONArray(response.getBody());
