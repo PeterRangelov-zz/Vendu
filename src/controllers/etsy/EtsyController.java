@@ -7,15 +7,12 @@ import dto.Item;
 import dto.User;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
-import org.hibernate.service.ServiceRegistryBuilder;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONArray;
 import org.json.simple.parser.ParseException;
 import org.json.simple.parser.JSONParser;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
 import util.DbUtil;
 
 import java.util.ArrayList;
@@ -33,10 +30,8 @@ public class EtsyController {
                 .asString();
         User u = new User();
 
-
         DbUtil dbUtil = new DbUtil();
         Session session = dbUtil.getFactory().openSession();
-
 
         try {
             session.beginTransaction();
@@ -47,14 +42,6 @@ public class EtsyController {
             e.printStackTrace();
             session.getTransaction().rollback();
         }
-
-
-
-
-
-
-
-
 
         return response.getBody();
     }
@@ -83,12 +70,4 @@ public class EtsyController {
 
         return items;
     }
-
-//    @RequestMapping(value = "/etsy", method = RequestMethod.POST, produces= MediaType.APPLICATION_JSON_VALUE)
-//    public Item addItemToEbay(@RequestParam(value = "name") String name, @RequestParam(value = "price") double price) {
-//        Item i = new Item(name, price);
-//        System.out.println(i) ;
-//        return i;
-//    }
-
 }
