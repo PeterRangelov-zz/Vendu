@@ -25,6 +25,7 @@ public class DbUtil {
                 .addAnnotatedClass(User.class);
         ssrb = new ServiceRegistryBuilder().applySettings(c.getProperties());
         sessionFactory = c.buildSessionFactory(ssrb.buildServiceRegistry());
+        System.out.println(c.getProperties());
     }
 
     public SessionFactory getFactory () {
