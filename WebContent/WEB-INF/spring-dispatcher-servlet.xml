@@ -18,7 +18,7 @@ http://www.springframework.org/schema/mvc/spring-mvc.xsd">
                      <value>/pages/</value>
               </property>
               <property name="suffix">
-                     <value>.html</value>
+                     <value>.jsp</value>
               </property>
        </bean>
 
