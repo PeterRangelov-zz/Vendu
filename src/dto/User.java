@@ -7,7 +7,7 @@ import org.joda.time.DateTime;
 import javax.persistence.*;
 
 @Data @AllArgsConstructor @NoArgsConstructor
-@Entity
+@Entity @Table
 public class User {
     @Id @GeneratedValue private int id;
 

@@ -1,4 +1,4 @@
-package controllers;
+package controllers.ebay;
 
 
 import dto.Item;
